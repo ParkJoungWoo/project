@@ -4,13 +4,9 @@
 #include <unistd.h>
 #include <time.h>
 
-
-
 char memorize[6][30][30], c, input_char;
 int before = 0,line=0 ,row=0, box_line=1 ,box_row=1, count=0, Ocount = -1, O[20] = {0}, dolcount=-1;
 time_t start, end;
-
-
 
 int getch(void){
 	int ch;
@@ -26,8 +22,6 @@ int getch(void){
 	tcsetattr(0, TCSAFLUSH, &save);
 	return ch;
 }
-
-
 
 void map_load(int a){
 	char letter;
@@ -59,7 +53,6 @@ void map_load(int a){
 	fclose(fp1);
 }
 
-
 void map_memorize(char player[6][box_row][box_line]){
 	for (int i=0 ; i<=box_row * box_line - 2 ; i++)
 		player[0][0][i] = memorize [0][0][i];
@@ -68,8 +61,6 @@ void map_memorize(char player[6][box_row][box_line]){
 			player[k+1][0][i] = player[k][0][i];
 }
 }
-
-
 
 void map_display(char player[6][box_row][box_line]){
 	system("clear");
